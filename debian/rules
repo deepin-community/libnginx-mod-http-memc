@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+execute_before_dh_auto_build:
+	# rebuild ngx_http_memc_response.c using ragel
+	[ -f src/ngx_http_memc_response.c.orig ] || cp src/ngx_http_memc_response.c src/ngx_http_memc_response.c.orig
+	ragel -G2 src/ngx_http_memc_response.rl || mv -f src/ngx_http_memc_response.c.orig src/ngx_http_memc_response.c
+	diff -u src/ngx_http_memc_response.c.orig src/ngx_http_memc_response.c || :
+
+execute_after_dh_auto_build:
+	mv -f src/ngx_http_memc_response.c.orig src/ngx_http_memc_response.c
+
 %:
 	dh $@

@@ -1,5 +1,42 @@
-template-repository (1.0-1) unstable; urgency=medium
+libnginx-mod-http-memc (0.20-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * New upstream version 0.20
+  * d/rules: Rebuild ngx_http_memc_response.c using ragel (Closes: 1025810)
+  * d/copyright: bump debian/* copyright year
+  * d/watch: use new recommended github template
+  * d/gbp.conf: add [pull] track-missing = True
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Mon, 08 Jan 2024 11:33:58 +0100
+
+libnginx-mod-http-memc (0.19-4) unstable; urgency=medium
+
+  * Team upload
+  * d/control: remove Build-Depends nginx-abi-1.24.0-1
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Sat, 07 Oct 2023 17:50:21 +0200
+
+libnginx-mod-http-memc (0.19-3) unstable; urgency=medium
+
+  * Team upload
+  * NEW ABI: rebuild with nginx-abi-1.24.0-1
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Wed, 28 Jun 2023 00:01:44 +0200
+
+libnginx-mod-http-memc (0.19-2) unstable; urgency=medium
+
+  * Team upload.
+  * d/t/generic rework. The test now checks module after
+    installation/reload/restart.
+  * d/control: bump Standards-Version: 4.6.2, no changes
+  * d/copyright: reformat text to be compatible with 'cme update dpkg-copyright'
+  * d/fix.scanned.copyright: added, fixes upstream author name parsing
+  * NEW ABI: rebuild with nginx-abi-1.22.1-7
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Mon, 13 Feb 2023 12:56:30 +0100
+
+libnginx-mod-http-memc (0.19-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1025289)
+
+ -- Jérémy Lal <kapouer@melix.org>  Fri, 02 Dec 2022 00:32:56 +0100
